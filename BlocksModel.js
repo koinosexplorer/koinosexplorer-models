@@ -1,7 +1,7 @@
 const { BaseModel } = require('./BaseModel');
 
 class BlocksModel extends BaseModel {
-  static get idColumn() { return 'block_id'; }
+  static get idColumn() { return 'block_num'; }
   static get tableName() { return 'blocks' }
   static get jsonSchema() {
     return {
@@ -13,6 +13,17 @@ class BlocksModel extends BaseModel {
 
         created_at: { type: 'datetime' },
         updated_at: { type: 'datetime' }
+      }
+    }
+  }
+
+  static get relationMappings() {
+    return {
+      blocks_metadata: {
+        relation: BaseModel.HasManyRelation,
+        modelClass: require('./BlocksMetadataModel').Model,
+        join: { from: 'blocks.block_num', to: 'blocks_metadata.block_num' },
+        eager: {}
       }
     }
   }

@@ -17,14 +17,8 @@ class ContractsMetadataModel extends BaseModel {
       }
     }
   }
-  static get relationMappings() {
-    return {
-      contracts: {
-        relation: BaseModel.ManyToManyRelation,
-        modelClass: require('./ContractsModel').Model,
-        join: { from: 'contracts.contract_id', to: 'contracts_metadata.contract_id' },
-        eager: {}
-      }
-    }
-  }
+}
+
+module.exports = {
+  Model: ContractsMetadataModel
 }

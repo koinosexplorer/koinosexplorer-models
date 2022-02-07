@@ -17,14 +17,8 @@ class TransactionsMetadataModel extends BaseModel {
       }
     }
   }
-  static get relationMappings() {
-    return {
-      transactions: {
-        relation: BaseModel.ManyToManyRelation,
-        modelClass: require('./TransactionsModel').Model,
-        join: { from: 'transactions.transaction_id', to: 'transactions_metadata.transaction_id' },
-        eager: {}
-      }
-    }
-  }
+}
+
+module.exports = {
+  Model: TransactionsMetadataModel
 }

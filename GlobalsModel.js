@@ -17,3 +17,7 @@ class GlobalsModel extends BaseModel {
     }
   }
 }
+
+module.exports = {
+  Model: GlobalsModel
+}

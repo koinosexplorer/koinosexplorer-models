@@ -12,6 +12,7 @@ class TransactionsModel extends BaseModel {
         operation: { type: 'string' },
         contract_id: { type: 'string' },
         caller: { type: 'string' },
+        block_num: { type: 'string' },
 
         created_at: { type: 'datetime' },
         updated_at: { type: 'datetime' }
@@ -20,14 +21,16 @@ class TransactionsModel extends BaseModel {
   }
   static get relationMappings() {
     return {
-      blocks: {
-        relation: BaseModel.ManyToManyRelation,
-        modelClass: require('./BlocksModel').Model,
-        join: { from: 'blocks.block_num', to: 'blocks_metadata.block_num' },
+      transactions_metadata: {
+        relation: BaseModel.HasManyRelation,
+        modelClass: require('./TransactionsMetadataModel').Model,
+        join: { from: 'transactions.transaction_id', to: 'transactions_metadata.transaction_id' },
         eager: {}
       }
     }
   }
 }
 
-module.exports = TransactionsModel
+module.exports = {
+  Model: TransactionsModel
+}

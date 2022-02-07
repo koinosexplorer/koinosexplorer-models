@@ -17,16 +17,6 @@ class BlocksMetadataModel extends BaseModel {
       }
     }
   }
-  static get relationMappings() {
-    return {
-      blocks: {
-        relation: BaseModel.ManyToManyRelation,
-        modelClass: require('./BlocksModel').Model,
-        join: { from: 'blocks.block_num', to: 'blocks_metadata.block_num' },
-        eager: {}
-      }
-    }
-  }
 }
 
 module.exports = {
