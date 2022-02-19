@@ -24,6 +24,12 @@ class BlocksModel extends BaseModel {
         modelClass: require('./BlocksMetadataModel').Model,
         join: { from: 'blocks.block_num', to: 'blocks_metadata.block_num' },
         eager: {}
+      },
+      transactions: {
+        relation: BaseModel.HasManyRelation,
+        modelClass: require('./TransactionsModel').Model,
+        join: { from: 'blocks.block_num', to: 'transactions.block_num' },
+        eager: {}
       }
     }
   }
