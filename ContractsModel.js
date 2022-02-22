@@ -24,6 +24,12 @@ class ContractsModel extends BaseModel {
         modelClass: require('./ContractsMetadataModel').Model,
         join: { from: 'contracts.contract_id', to: 'contracts_metadata.contract_id' },
         eager: {}
+      },
+      tokens: {
+        relation: BaseModel.HasManyRelation,
+        modelClass: require('./TokensModel').Model,
+        join: { from: 'contracts.contract_id', to: 'tokens.contract_id' },
+        eager: {}
       }
     }
   }
