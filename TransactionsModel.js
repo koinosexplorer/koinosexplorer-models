@@ -9,8 +9,7 @@ class TransactionsModel extends BaseModel {
 
       properties: {
         transaction_id: { type: 'string' },
-        operation: { type: 'string' },
-        contract_id: { type: 'string' },
+        operations: { type: 'integer' },
         caller: { type: 'string' },
         block_num: { type: 'string' },
 
@@ -25,6 +24,12 @@ class TransactionsModel extends BaseModel {
         relation: BaseModel.HasManyRelation,
         modelClass: require('./TransactionsMetadataModel').Model,
         join: { from: 'transactions.transaction_id', to: 'transactions_metadata.transaction_id' },
+        eager: {}
+      },
+      transactions_operations: {
+        relation: BaseModel.HasManyRelation,
+        modelClass: require('./TransactionsOperationsModel').Model,
+        join: { from: 'transactions.transaction_id', to: 'transactions_operations.transaction_id' },
         eager: {}
       },
       tokens: {
