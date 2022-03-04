@@ -12,6 +12,9 @@ class TransactionsModel extends BaseModel {
         from: { type: 'string' },
         to: { type: 'string' },
         value: { type: 'string' },
+        // relations
+        token_id: { type: 'string' },
+        transaction_id: { type: 'string' },
         
         created_at: { type: 'datetime' },
         updated_at: { type: 'datetime' }
