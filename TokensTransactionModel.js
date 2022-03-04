@@ -1,6 +1,7 @@
 const { BaseModel } = require('./BaseModel');
 
 class TransactionsModel extends BaseModel {
+  static get idColumn() { return null; }
   static get tableName() { return 'tokens_transactions' }
   static get jsonSchema() {
     return {
