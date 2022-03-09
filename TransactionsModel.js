@@ -26,10 +26,10 @@ class TransactionsModel extends BaseModel {
         join: { from: 'transactions.transaction_id', to: 'transactions_metadata.transaction_id' },
         eager: {}
       },
-      transactions_operations: {
+      transactions_receipts: {
         relation: BaseModel.HasManyRelation,
-        modelClass: require('./TransactionsOperationsModel').Model,
-        join: { from: 'transactions.transaction_id', to: 'transactions_operations.transaction_id' },
+        modelClass: require('./TransactionsReceiptsModel').Model,
+        join: { from: 'transactions.transaction_id', to: 'transactions_receipts.transaction_id' },
         eager: {}
       },
       tokens: {

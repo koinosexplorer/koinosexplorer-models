@@ -1,8 +1,8 @@
 const { BaseModel } = require('./BaseModel');
 
-class TransactionsOperationsModel extends BaseModel {
-  static get idColumn() { return null; }
-  static get tableName() { return 'transactions_operations' }
+class TransactionsReceiptsModel extends BaseModel {
+  static get idColumn() { return 'id'; }
+  static get tableName() { return 'transactions_receipts' }
   static get jsonSchema() {
     return {
       type: 'object',
@@ -21,5 +21,5 @@ class TransactionsOperationsModel extends BaseModel {
 }
 
 module.exports = {
-  Model: TransactionsOperationsModel
+  Model: TransactionsReceiptsModel
 }
