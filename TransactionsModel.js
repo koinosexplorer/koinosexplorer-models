@@ -11,7 +11,7 @@ class TransactionsModel extends BaseModel {
         transaction_id: { type: 'string' },
         operations: { type: 'integer' },
         caller: { type: 'string' },
-        block_num: { type: 'string' },
+        block_num: { type: 'integer' },
 
         created_at: { type: 'datetime' },
         updated_at: { type: 'datetime' }
