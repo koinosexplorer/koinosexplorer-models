@@ -8,7 +8,7 @@ class BlocksModel extends BaseModel {
       type: 'object',
 
       properties: {
-        block_num: { type: 'string' },
+        block_num: { type: 'integer' },
         producer: { type: 'string' },
 
         created_at: { type: 'datetime' },
