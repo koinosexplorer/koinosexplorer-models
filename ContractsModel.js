@@ -29,7 +29,6 @@ class ContractsModel extends BaseModel {
         relation: BaseModel.HasManyRelation,
         modelClass: require('./TokensModel').Model,
         join: { from: 'contracts.contract_id', to: 'tokens.contract_id' },
-        eager: {}
       }
     }
   }
