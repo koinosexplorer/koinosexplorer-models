@@ -41,7 +41,6 @@ class BlocksModel extends BaseModel {
         relation: BaseModel.HasManyRelation,
         modelClass: require('./TokensModel').Model,
         join: { from: 'blocks.block_num', to: 'tokens.block_num' },
-        eager: {}
       }
     }
   }
