@@ -9,7 +9,7 @@ class TransactionsHoldersModel extends BaseModel {
 
       properties: {
         holder: { type: 'string' },
-        amount: { type: 'string' },        
+        amount: { type: 'bigInteger' },        
         // relations
         token_id: { type: 'string' },
         

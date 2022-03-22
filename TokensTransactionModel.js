@@ -11,7 +11,7 @@ class TransactionsModel extends BaseModel {
         operation: { type: 'string' },
         from: { type: 'string' },
         to: { type: 'string' },
-        value: { type: 'string' },
+        value: { type: 'bigInteger' },
         // relations
         token_id: { type: 'string' },
         transaction_id: { type: 'string' },
