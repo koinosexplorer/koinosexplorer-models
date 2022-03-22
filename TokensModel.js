@@ -31,6 +31,12 @@ class TokensModel extends BaseModel {
         modelClass: require('./TokensTransactionModel').Model,
         join: { from: 'tokens.token_id', to: 'tokens_transactions.token_id' },
         eager: {}
+      },
+      tokens_holders: {
+        relation: BaseModel.HasManyRelation,
+        modelClass: require('./TokensHolders').Model,
+        join: { from: 'tokens.token_id', to: 'tokens_holders.token_id' },
+        eager: {}
       }
     }
   }

@@ -15,6 +15,7 @@ class TransactionsModel extends BaseModel {
         // relations
         token_id: { type: 'string' },
         transaction_id: { type: 'string' },
+        block_num: { type: 'integer' },
         
         created_at: { type: 'datetime' },
         updated_at: { type: 'datetime' }
